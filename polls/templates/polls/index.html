@@ -1,14 +1,16 @@
 {% if latest_question_list %}
   <ul>
   {% for question in latest_question_list %}
+    {#-- First iteration, Tutorial Part 3 --#}
     {% comment %}
-    <!-- First iteration, tutorial part 3 -->
-    <!--   Problem: URL is partially hardcoded; makes template less scalable/easily reusable -->
-    <!-- <li><a href="/polls/{{ question.id }}/">{{question.question_text}}</a></li> -->
-    <!-- Second iteration, tutorial part 3: Use `name` value from `urls.py` -->
-    <!-- <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li> -->
+    {# Problem: URL is partially hardcoded; makes template less scalable/easily reusable #}
+    {# <li><a href="/polls/{{ question.id }}/">{{question.question_text}}</a></li> #}
     {% endcomment %}
-    <!-- Third iteration, tutorial part 3: Add namespace to view for specificity -->
+    {% comment %}
+    {#-- Second iteration, Tutorial Part 3: Use `name` value from `urls.py` --#}
+    {# <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li> #}
+    {% endcomment %}
+    {#-- Third iteration, Tutorial Part 3: Add namespace to view for specificity --#}
     <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
   {% endfor %}
   </ul>
