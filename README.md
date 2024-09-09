@@ -142,7 +142,7 @@ By default, this will run the Django project at port 8000. A different port numb
 
 It is probably worth noting that Django's [`runserver`](https://docs.djangoproject.com/en/5.1/ref/django-admin/#django-admin-runserver) command is meant to be used strictly as a development tool. Per the [install guide](https://docs.djangoproject.com/en/5.1/topics/install/), `Apachi` and `mod_wsgi` should be used instead for production.  
 
-To run migrations and spool up the server, run the following commands:  
+To run [migrations](https://docs.djangoproject.com/en/5.1/topics/migrations/) and spool up the server, run the following commands:  
 
 ```shell
 $ python manage.py makemigrations
@@ -151,6 +151,20 @@ $ python manage.py migrate
 $ python manage.py runserver
 # Run the Django server
 ```
+
+### [Django Admin](https://docs.djangoproject.com/en/5.1/intro/tutorial02/#introducing-the-django-admin)
+
+One of the bigger advantages that comes with using Django is that it automatically generates an admin interface for site managers.  
+
+### Creating an Admin User (https://docs.djangoproject.com/en/5.1/intro/tutorial02/#creating-an-admin-user)
+
+To access the admin panel, a user with admin permissions must first be created. In your commmand line, run the following:  
+
+```shell
+$ python manage.py createsuperuser
+```
+
+You will be prompted for a username, email address, and a password with confirmation. Once created, start the development server and navigate to localhost:8000/admin/ in a browser window. Log in to access the admin panel.  
 
 <!-- ## Troubleshooting   -->
 
