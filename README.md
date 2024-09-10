@@ -5,16 +5,19 @@ This repository contains my code-along and notes to Django 5.1's official tutori
 ## Installation
 
 ### Requirements
+
 - [Python](https://www.python.org/) 3.12.5  
   - Python PIP (included with Python 3.4 and later by default)  
   - Python venv (included with Python 3.3 and later by default)  
 - [PostgreSQL](https://www.postgresql.org/) 14.13  
 
 ### Cloning the repository
+
 Assuming you have [Git](https://git-scm.com) installed and configured, use the `git clone` command with the appropriate remote URL for your method of GitHub user authentication.  
 Alternatively, this repo can be downloaded as a ZIP file by clicking the "Download ZIP" link in the <button style="font-size: 14px; height: 32px; color: #ffffff; background: #2E9A40; padding: 0px 12px; border-radius: 6px;">&lsaquo;&rsaquo; Code &triangledown;</button> menu on this project's webpage on GitHub.  
 
 ### Setting up a virtual environment
+
 To control software dependencies and ensure program behaviors are consistent across different computers, Python uses virtual environments. There are many popular tools for this, but I will be using [`venv`](https://docs.python.org/3/library/venv.html) because it comes with Python.  
 
 Using your CLI, navigate to this project's root folder and run the following commands:  
@@ -107,6 +110,7 @@ DATABASES = {
 ```
 
 ### PostgreSQL User Authentication
+
 If you haven't previously used PostgreSQL, you may need to adjust [authentication methods](https://www.postgresql.org/docs/current/auth-methods.html) for local connection types in the [`pg_hba.conf`](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html) file. It can be [located](https://www.postgresql.org/docs/current/runtime-config-file-locations.html#GUC-HBA-FILE) by entering the following into your command line:  
 
 ```shell
@@ -156,7 +160,7 @@ $ python manage.py runserver
 
 One of the bigger advantages that comes with using Django is that it automatically generates an admin interface for site managers.  
 
-### Creating an Admin User (https://docs.djangoproject.com/en/5.1/intro/tutorial02/#creating-an-admin-user)
+### [Creating an Admin User](https://docs.djangoproject.com/en/5.1/intro/tutorial02/#creating-an-admin-user)
 
 To access the admin panel, a user with admin permissions must first be created. In your commmand line, run the following:  
 
@@ -169,7 +173,9 @@ You will be prompted for a username, email address, and a password with confirma
 <!-- ## Troubleshooting   -->
 
 ## License
+
 MIT, probably?  
 
 ## Credits
+
 Credits to [Django](https://djangoproject.com) official documentation author(s) for the tutorial that this project is based on.  
