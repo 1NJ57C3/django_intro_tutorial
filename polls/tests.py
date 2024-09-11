@@ -112,3 +112,21 @@ class QuestionDetailViewTests(TestCase):
     url = reverse("polls:detail", args=(past_question.id,))
     response = self.client.get(url)
     self.assertContains(response, past_question.question_text)
+
+
+# Additional tests for practice
+# https://docs.djangoproject.com/en/5.1/intro/tutorial05/#ideas-for-more-tests
+class QuestionResultsViewTests(TestCase):
+  def test_future_results(self):
+    future_question = create_question(question_text="Future question", days=5)
+    url = reverse("polls:results", args=(future_question.id,))
+      # `args` in reverse() method must be iterable; the trailing comma 
+      # makes this variable assignment a tuple instead of direct reference
+    response = self.client.get(url)
+    self.assertEqual(response.status_code, 404)
+  
+  def test_past_results(self):
+    past_question = create_question(question_text="Past Question.", days=-5)
+    url = reverse("polls:results", args=(past_question.id,))
+    response = self.client.get(url)
+    self.assertContains(response, past_question.question_text)
