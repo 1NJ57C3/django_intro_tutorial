@@ -65,7 +65,9 @@ ROOT_URLCONF = 'django_intro_tutorial.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+          BASE_DIR / "templates" # P7 - search "templates" folder in project root folder for templates
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
