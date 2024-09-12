@@ -34,7 +34,7 @@ class IndexView(generic.ListView):
     published in the future).
     """
     return Question.objects.filter(pub_date__lte=timezone.now()).order_by("-pub_date")[:5]
-    # Above line returns a queryset containing `Question`s whose `pub_date` is less than or equal (__lte) to `timezone.now`.
+    # Returns filtered `Question`s whose `pub_date` is less than or equal (__lte) to `timezone.now`
 
 class DetailView(generic.DetailView):
   model = Question
