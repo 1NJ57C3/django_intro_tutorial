@@ -1,5 +1,6 @@
 body {
   background: #161c1f url("images/django-logo-negative.svg") no-repeat center fixed;
+  color: white;
 }
 
 li a {
