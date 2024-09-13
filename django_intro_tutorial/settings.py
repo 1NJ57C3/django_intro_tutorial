@@ -15,6 +15,7 @@ from pathlib import Path
 # * These import statements and env definition can be removed if you are not using a `.env` file.
 import environ
 import os
+import sys
 
 env = environ.Env(
     DEBUG=(bool, False)
@@ -138,3 +139,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+INTERNAL_IPS = [
+  "127.0.0.1",
+]
+
+TESTING = "test" in sys.argv
+
+if not TESTING:
+    INSTALLED_APPS = [
+        *INSTALLED_APPS,
+        'debug_toolbar',
+    ]
+    MIDDLEWARE = [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+        *MIDDLEWARE,
+    ]
